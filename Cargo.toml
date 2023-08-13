@@ -1,0 +1,22 @@
+[package]
+name = "felidae-network-client"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+# subxt = { git = "https://github.com/paritytech/subxt", branch = "master" }
+subxt = { path = "./subxt/subxt/" }
+subxt-signer = { path = "./subxt/signer/", features = ["subxt"] }
+tokio = { version = "1.28.0", features = ["rt-multi-thread", "macros", "time"] }
+sp-keyring = "25.0.0"
+codec = { package = "parity-scale-codec", version = "3.4.0", default-features = false, features = [
+    "derive",
+    "full",
+    "bit-vec",
+] }
+sp-core = "21.0.0"
+bounded-vec = "0.7.1"
+bounded-collections = { version = "0.1.8", default-features = false, features = [
+    "serde",
+] }
